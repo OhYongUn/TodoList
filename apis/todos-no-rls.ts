@@ -2,6 +2,7 @@
 
 import { createSupabaseBrowserClient } from "@/lib/client/supabase";
 
+// todoList 가져오기
 export const getTodos = async () => {
   const supabase = createSupabaseBrowserClient();
   const result = await supabase
@@ -11,9 +12,11 @@ export const getTodos = async () => {
     .order("id", {
       ascending: false,
     });
+
   return result.data;
 };
 
+// todoList 가져오기 + by Id
 export const getTodosById = async (id: number) => {
   const supabase = createSupabaseBrowserClient();
   const result = await supabase
@@ -24,6 +27,8 @@ export const getTodosById = async (id: number) => {
 
   return result.data;
 };
+
+// todoList 가져오기 + search
 export const getTodosBySearch = async (terms: string) => {
   const supabase = createSupabaseBrowserClient();
   const result = await supabase
@@ -36,6 +41,8 @@ export const getTodosBySearch = async (terms: string) => {
 
   return result.data;
 };
+
+// todoList 생성하기
 export const createTodos = async (content: string) => {
   const supabase = createSupabaseBrowserClient();
   const result = await supabase
@@ -77,3 +84,10 @@ export const deleteTodosSoft = async (id: number) => {
 
   return result.data;
 };
+
+// todoList hardDelete
+// export const deleteTodosHard = async (id: number) => {
+//   const supabase = createSupabaseBrowserClient();
+//   const result = await supabase.from("todos_no_rls").delete().eq("id", id);
+//   return result.data;
+// };
