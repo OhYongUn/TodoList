@@ -53,7 +53,14 @@ const useTodosController = () => {
       await onGetTodos();
     }
   };
-  return { loading, todos };
+  return {
+    loading,
+    todos,
+    onCreateEmptyTodos,
+    onUpdateTodos,
+    onDeleteTodos,
+    onSearchTodos,
+  };
 };
 
 export default useTodosController;

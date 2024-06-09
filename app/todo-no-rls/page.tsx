@@ -5,7 +5,6 @@ import TodoContainer from "@/app/todo-no-rls/componetns/TodoContainer";
 const page = async () => {
   return (
     <div>
-      page
       <TodoContainer />
     </div>
   );
