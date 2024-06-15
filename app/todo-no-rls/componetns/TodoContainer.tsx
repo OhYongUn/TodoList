@@ -24,6 +24,7 @@ const TodoContainer = () => {
         onCreate={onCreateEmptyTodos}
         onDelete={onDeleteTodos}
         onSearch={onSearchTodos}
+        isReadOnly={false}
       />
     </div>
   );
